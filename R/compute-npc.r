@@ -36,7 +36,6 @@ compute_npcx <- function(x, group = 1L, h.step = 0.1, margin.npc = 0.05) {
   if (any(group > 1L) && h.step != 0) {
     x <- x + (group - 1L) * h.step * ifelse(x < 0.5, 1, -1)
   }
-  x <- ifelse(x < 0, 0, x)
   x
 }
 
@@ -62,6 +61,5 @@ compute_npcy <- function(y, group = 1L, v.step = 0.1, margin.npc = 0.05) {
   if (any(group > 1L) && v.step != 0) {
     y <- y + (group - 1L) * v.step * ifelse(y < 0.5, 1, -1)
   }
-  y <- ifelse(y < 0, 0, y)
   y
 }
